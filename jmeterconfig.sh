@@ -6,19 +6,19 @@ mkdir JMETER
 cd JMETER
 curl -o apache-jmeter-5.4.1.zip  https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.1.zip
 Curl -L https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-32-bit.exe > Git-2.35.1.2-32-bit.exe
-(
-echo [Setup]
-echo Lang=default
-echo Dir=C:\Program Files (x86)\Git
-echo Group=Git
-echo NoIcons=0
-echo SetupType=default
-echo Components=
-echo Tasks=
-echo PathOption=Cmd
-echo SSHOption=OpenSSH
-echo CRLFOption=CRLFAlways
-)>"gitparameter.cnf"
+
+echo [Setup] > "gitparameter.cnf"
+echo Lang=default >> "gitparameter.cnf"
+echo Dir=C:\Program Files (x86)\Git >> "gitparameter.cnf"
+echo Group=Git >> "gitparameter.cnf"
+echo NoIcons=0 >> "gitparameter.cnf"
+echo SetupType=default >> "gitparameter.cnf"
+echo Components= >> "gitparameter.cnf"
+echo Tasks= >> "gitparameter.cnf"
+echo PathOption=Cmd >> "gitparameter.cnf"
+echo SSHOption=OpenSSH >> "gitparameter.cnf"
+echo CRLFOption=CRLFAlways >> "gitparameter.cnf"
+
 start Git-2.35.1.2-32-bit.exe /VERYSILENT /LOADINF="gitparameter.cnf" /NORESTART
 
 tar -xf apache-jmeter-5.4.1.zip
