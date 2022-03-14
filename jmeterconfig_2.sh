@@ -8,7 +8,7 @@ cd apache-jmeter-5.4.1
 Rem aws s3 cp "s3://event-driven-app-with-lambda-redshift/scripts/Redshift Load Test.jmx" "Redshift Load Test.jmx"
 Rem aws s3 cp "s3://event-driven-app-with-lambda-redshift/scripts/jmeter.bat" "C:\JMETER\apache-jmeter-5.4.1\bin\jmeter.bat"
 mklink "C:\Users\Administrator\Desktop\jmeter.bat" "C:\JMETER\apache-jmeter-5.4.1\bin\jmeter.bat"
-Rem cd lib
+cd lib
 Rem aws s3 cp s3://event-driven-app-with-lambda-redshift/scripts/redshift-jdbc42-2.0.0.4.jar redshift-jdbc42-2.0.0.4.jar
 cd ext
 curl -L https://jmeter-plugins.org/get/ > jmeter-plugins-manager.jar
