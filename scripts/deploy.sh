@@ -12,8 +12,20 @@ read -n 1 -r -s -p $'[Input Required] Upload user-config.json and press enter to
 read -p $'[Input Required] Enter a stack name: ' stack
 read -p $'[Input Required] Enter your region: (e.g. us-east-1): ' current_region
 read -p $'[Input Required] Enter your on prem CIDR range (format xxx.xxx.xxx.xxx/xx): ' onprem_cidr
+read -p $'[Tag Value] div: ' div
+read -p $'[Tag Value] dept: ' dept
+read -p $'[Tag Value] billingcode: ' billingcode
+read -p $'[Tag Value] contact: ' contact
+read -p $'[Tag Value] env: ' env
+read -p $'[Tag Value] service: ' service
 export STACK_NAME=$stack
 export ONPREM_CIDR=$onprem_cidr
+export DIV=$div
+export DEPT=$dept
+export BILLINGCODE=$billingcode
+export CONTACT=$contact
+export ENV=$env
+export SERVICE=$service
 #Need more elegant solution for handling exception here:
 [ -f ~/user-config.json ] && mv ~/user-config.json ~/amazon-redshift-infrastructure-automation/user-config.json
 export account_id=`aws sts get-caller-identity --query "Account" --output text`
