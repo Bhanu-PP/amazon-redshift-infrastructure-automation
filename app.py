@@ -39,12 +39,12 @@ other_config = config.get('other')
 stackname = os.getenv('STACK_NAME')
 onprem_cidr = os.getenv('ONPREM_CIDR')
 
-div = os.getenv('DIV')
-dept = os.getenv('DEPT')
-billingcode = os.getenv('BILLINGCODE')
-contact = os.getenv('CONTACT')
-env = os.getenv('ENV')
-service = os.getenv('SERVICE')
+div_tag = os.getenv('DIV')
+dept_tag = os.getenv('DEPT')
+billingcode_tag = os.getenv('BILLINGCODE')
+contact_tag = os.getenv('CONTACT')
+env_tag = os.getenv('ENV')
+service_tag = os.getenv('SERVICE')
 
 glue_crawler_s3_target = "N/A"
 glue_crawler_s3_config = "N/A"
@@ -138,12 +138,12 @@ if sct_on_prem_to_redshift_target == "CREATE":
     sct_on_prem_to_redshift_stack.add_dependency(redshift_stack);
     Tags.of(sct_on_prem_to_redshift_stack).add("project", stackname)
     
-    Tags.of(sct_on_prem_to_redshift_stack).add("div", div)
-    Tags.of(sct_on_prem_to_redshift_stack).add("dept", dept)
-    Tags.of(sct_on_prem_to_redshift_stack).add("billingcode", billingcode)
-    Tags.of(sct_on_prem_to_redshift_stack).add("contact", contact)
-    Tags.of(sct_on_prem_to_redshift_stack).add("env", env)
-    Tags.of(sct_on_prem_to_redshift_stack).add("service", service)
+    Tags.of(sct_on_prem_to_redshift_stack).add("div", div_tag)
+    Tags.of(sct_on_prem_to_redshift_stack).add("dept", dept_tag)
+    Tags.of(sct_on_prem_to_redshift_stack).add("billingcode", billingcode_tag)
+    Tags.of(sct_on_prem_to_redshift_stack).add("contact", contact_tag)
+    Tags.of(sct_on_prem_to_redshift_stack).add("env", env_tag)
+    Tags.of(sct_on_prem_to_redshift_stack).add("service", service_tag)
 
 if jmeter == "CREATE":
     jmeter_stack = JmeterStack(
